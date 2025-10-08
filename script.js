@@ -64,23 +64,51 @@
 //     delay:4
 // })
 
-var tl = gsap.timeline();
+// var tl = gsap.timeline();
 
-tl.to("#box1",{
-    x:1200,
-    rotate :360,
-    duration:2,
-    delay:1
+// tl.to("#box1",{
+//     x:1200,
+//     rotate :360,
+//     duration:2,
+//     delay:1
+// })
+
+// tl.to("#box2",{
+//     x:1200,
+//     rotate :360,
+//     duration:2,
+// })
+
+// tl.to("#box3",{
+//     x:1200,
+//     rotate :360,
+//     duration:2,
+// })
+
+gsap.from("#page1 #box1",{
+    scale : 0,
+    delay : 1,
+    duration : 2,
+    rotate : 360
 })
 
-tl.to("#box2",{
-    x:1200,
-    rotate :360,
-    duration:2,
+gsap.from("#page2 #box2",{
+    scale : 0,
+    delay : 1,
+    duration : 2,
+    rotate : 360,
+    scrollTrigger : "#page2 #box2"
 })
 
-tl.to("#box3",{
-    x:1200,
-    rotate :360,
-    duration:2,
+gsap.from("#page3 #box3",{
+    scale : 0,
+    delay : 1,
+    duration : 2,
+    rotate : 360,
+    scrollTrigger : {
+        trigger : "#page3 #box3",
+        scroller : "body",
+        markers : true,
+        startPoint : "top 60%"
+    }
 })
